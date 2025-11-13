@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nelreti Industrial Services — Engineering, Energy & Agriculture</title>
+  <meta name="description" content="Nelreti Industrial Services — Engineering support, manpower sourcing, facility management, renewable energy and agricultural solutions based in Port Harcourt, Nigeria."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(180deg, rgba(23,128,61,0.08), rgba(255,140,0,0.05));
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.8);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+    
+    /* Fixed dropdown styles */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    .dropdown-bridge {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 16px;
+      background: transparent;
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 16px);
+      left: 0;
+      width: 240px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      z-index: 50;
+      padding: 8px 0;
+    }
+    
+    /* Text rotator styles */
+    .rotator-container {
+      position: relative;
+      height: 11rem;
+      overflow: hidden;
+    }
+    
+    .rotator-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .rotator-item.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="antialiased text-[#1a1a1a] bg-white">
+
+  <!-- Top bar -->
+  <div class="bg-[#17803d] text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <svg class="w-4 h-4 text-[#ff8c00]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 8v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Office: #24 Unity Drive, Paradise Estate, Eneka, Port Harcourt, Rivers State</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:info@nelreti.com" class="hover:underline text-white">info@nelreti.com</a>
+        <a href="tel:+234" class="hover:underline text-white">+234 — (contact)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 glass border-b border-[#e2e8f0]">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="transparent.png" alt="Nelreti Industrial Services Logo" class="h-12 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[#1a1a1a] font-medium">
+        <!-- Services Dropdown - Fixed -->
+        <div class="dropdown">
+          <button class="hover:text-[#17803d] flex items-center gap-1">
+            Services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <!-- Invisible bridge to prevent dropdown from closing -->
+          <div class="dropdown-bridge"></div>
+          <div class="dropdown-menu">
+            <a href="#renewable-energy" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Renewable Energy</a>
+            <a href="#engineering-support" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Engineering Support</a>
+            <a href="#manpower-sourcing" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Manpower Sourcing</a>
+            <a href="#corporate-training" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Corporate Training</a>
+            <a href="#facility-management" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Facility Management</a>
+            <a href="#livestock-farming" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Livestock Farming</a>
+            <a href="#agricultural-wholesale" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Agricultural Wholesale</a>
+          </div>
+        </div>
+        
+        <a href="#projects" class="hover:text-[#17803d]">Projects</a>
+        <a href="#sectors" class="hover:text-[#17803d]">Sectors</a>
+        <a href="#about" class="hover:text-[#17803d]">About</a>
+        <a href="#contact" class="px-4 py-2 bg-[#ff8c00] text-white rounded-md font-semibold hover:brightness-110">Contact Us</a>
+      </nav>
+
+      <div class="md:hidden">
+        <details class="relative">
+          <summary class="list-none cursor-pointer px-3 py-2 bg-[#f5f7f5] rounded-md border border-[#e2e8f0]">Menu</summary>
+          <div class="absolute right-0 mt-2 w-48 bg-white border border-[#e2e8f0] p-3 rounded-md shadow-lg">
+            <!-- Mobile Services Dropdown -->
+            <details class="mt-1">
+              <summary class="list-none cursor-pointer py-1 hover:text-[#17803d]">Services</summary>
+              <div class="ml-4 mt-1 border-l border-[#e2e8f0] pl-2">
+                <a href="#renewable-energy" class="block py-1 text-sm hover:text-[#17803d]">Renewable Energy</a>
+                <a href="#engineering-support" class="block py-1 text-sm hover:text-[#17803d]">Engineering Support</a>
+                <a href="#manpower-sourcing" class="block py-1 text-sm hover:text-[#17803d]">Manpower Sourcing</a>
+                <a href="#corporate-training" class="block py-1 text-sm hover:text-[#17803d]">Corporate Training</a>
+                <a href="#facility-management" class="block py-1 text-sm hover:text-[#17803d]">Facility Management</a>
+                <a href="#livestock-farming" class="block py-1 text-sm hover:text-[#17803d]">Livestock Farming</a>
+                <a href="#agricultural-wholesale" class="block py-1 text-sm hover:text-[#17803d]">Agricultural Wholesale</a>
+              </div>
+            </details>
+            
+            <a href="#projects" class="block py-1 hover:text-[#17803d]">Projects</a>
+            <a href="#sectors" class="block py-1 hover:text-[#17803d]">Sectors</a>
+            <a href="#about" class="block py-1 hover:text-[#17803d]">About</a>
+            <a href="#contact" class="block py-1 font-semibold text-[#ff8c00]">Contact Us</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-bg">
+    <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6">
+        <p class="text-[#ff8c00] font-medium uppercase tracking-wide">Trusted • Reliable • Professional</p>
+        
+        <!-- Text Rotator Section -->
+        <div class="rotator-container">
+          <div class="rotator-item active">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-[#17803d] leading-tight">
+              Engineering Support Services
+            </h2>
+            <p class="text-gray-700 max-w-2xl mt-4">
+              Zero unplanned shutdowns for oil & gas, industrial plants & large facilities. A fully optimized site running at peak efficiency 24/7
+            </p>
+          </div>
+          
+          <div class="rotator-item">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-[#17803d] leading-tight">
+              Procurement & Supply
+            </h2>
+            <p class="text-gray-700 max-w-2xl mt-4">
+              Zero-delay procurement pipeline. 100% verified items delivered on time, every time. With no inflated prices, no shortages, no downtime.
+            </p>
+          </div>
+          
+          <div class="rotator-item">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-[#17803d] leading-tight">
+              Solar & Inverter Systems
+            </h2>
+            <p class="text-gray-700 max-w-2xl mt-4">
+              Guaranteed uptime energy. 24/7 power with 40–70% reduction in generator/diesel costs.
+            </p>
+          </div>
+          
+          <div class="rotator-item">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-[#17803d] leading-tight">
+              Farm-to-Factory Supply
+            </h2>
+            <p class="text-gray-700 max-w-2xl mt-4">
+              Guaranteed fresh, consistent agricultural supply. With zero stockouts and premium-grade quality.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md shadow hover:scale-[1.01]">Get a Quote</a>
+          <a href="#services" class="inline-flex items-center gap-2 px-5 py-3 border border-[#17803d] rounded-md text-[#17803d] hover:bg-[#17803d]/10">Our Services</a>
+        </div>
+
+        <div class="flex items-center gap-6 text-gray-700 mt-6">
+          <div>
+            <div class="text-3xl font-bold text-[#17803d]" data-count="12">12</div>
+            <div class="text-xs">Years of steady growth</div>
+          </div>
+          <div class="h-8 border-r border-[#e2e8f0]"></div>
+          <div>
+            <div class="text-3xl font-bold text-[#17803d]" data-count="100">100+</div>
+            <div class="text-xs">Engineering engagements delivered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="rounded-xl overflow-hidden shadow-lg border border-[#e2e8f0]">
+          <div class="h-56 flex items-center justify-center bg-[#f5f7f5]">
+            <svg class="w-28 h-28 text-[#17803d] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 7h18M7 3v4M17 3v4M4 21h16" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="p-4 bg-white">
+            <h3 class="text-[#17803d] font-semibold">Engineering Support & Facility Management</h3>
+            <p class="text-gray-700 text-sm mt-2">On-demand engineering, maintenance, and facility operations — tailored for oil & gas and industrial clients.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-lg p-4 bg-[#f5f7f5] border border-[#e2e8f0]">
+            <h4 class="font-semibold text-[#17803d]">Renewable Energy</h4>
+            <p class="text-gray-700 text-sm mt-2">Solar & inverter system installations and maintenance.</p>
+          </div>
+          <div class="rounded-lg p-4 bg-[#f5f7f5] border border-[#e2e8f0]">
+            <h4 class="font-semibold text-[#17803d]">Manpower Sourcing</h4>
+            <p class="text-gray-700 text-sm mt-2">Qualified personnel for short- and long-term assignments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="space-y-4">
+        <p class="text-[#ff8c00] font-medium uppercase">Core Services</p>
+        <h3 class="text-2xl font-bold text-[#17803d]">What we deliver</h3>
+        <p class="text-gray-700">
+          We combine engineering expertise, strong supplier networks and dedicated teams to deliver practical, safe, and cost-effective solutions.
+        </p>
+        <a href="#contact" class="inline-block mt-3 px-4 py-2 bg-[#17803d] text-white rounded-md font-semibold hover:brightness-110">Discuss a project</a>
+      </div>
+
+      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+          <h4 class="font-semibold text-[#17803d]">Engineering Support Services</h4>
+          <p class="text-gray-700 text-sm mt-2">Design, supervision and technical support for infrastructure and industrial projects.</p>
+        </article>
+
+        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+          <h4 class="font-semibold text-[#17803d]">Manpower Sourcing</h4>
+          <p class="text-gray-700 text-sm mt-2">Recruitment and deployment of skilled staff for projects and operations.</p>
+        </article>
+
+        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+          <h4 class="font-semibold text-[#17803d]">Corporate Training</h4>
+          <p class="text-gray-700 text-sm mt-2">Tailored training programs to improve team performance and compliance.</p>
+        </article>
+
+        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+          <h4 class="font-semibold text-[#17803d]">Facility Management & Maintenance</h4>
+          <p class="text-gray-700 text-sm mt-2">Reliable facility care, vendor coordination and asset upkeep.</p>
+        </article>
+
+        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+          <h4 class="font-semibold text-[#17803d]">Renewable Energy & Solar</h4>
+          <p class="text-gray-700 text-sm mt-2">Solar design, inverter installations and maintenance packages.</p>
+        </article>
+
+        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+          <h4 class="font-semibold text-[#17803d]">Agriculture Solutions</h4>
+          <p class="text-gray-700 text-sm mt-2">Poultry, cattle and fish farm setups; wholesale and retail supply chains.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-[#f5f7f5] py-14">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h3 class="text-2xl font-bold text-[#17803d]">Mission & Vision</h3>
+        <p class="text-gray-700 mt-3">
+          Our mission is to be a reputable brand in the provision of high-quality engineering services through vast experience and competence. 
+          Our vision is to become a first-class company providing innovative and technology-driven solutions.
+        </p>
+
+        <h4 class="text-[#17803d] font-semibold mt-6">Core Values</h4>
+        <ul class="mt-3 text-gray-700 grid grid-cols-2 gap-2">
+          <li>• Excellence</li>
+          <li>• Teamwork</li>
+          <li>• Integrity</li>
+          <li>• Professionalism</li>
+          <li>• Customer Service</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <div class="rounded-xl overflow-hidden border border-[#e2e8f0]">
+          <div class="h-40 flex items-center justify-center bg-white">
+            <svg class="w-24 h-24 text-[#17803d] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3h18v18H3z" stroke-width="1.2"/></svg>
+          </div>
+          <div class="p-4 bg-white">
+            <h5 class="text-[#17803d] font-semibold">Company Overview</h5>
+            <p class="text-gray-700 text-sm mt-2">Nelreti Industrial Services was incorporated as a private limited company and has steadily grown to deliver solutions across oil & gas, renewable energy, and agriculture sectors.</p>
+          </div>
+        </div>
+
+        <div class="rounded-xl p-4 bg-white border border-[#e2e8f0]">
+          <h5 class="text-[#17803d] font-semibold">Why Choose Us?</h5>
+          <p class="text-gray-700 text-sm mt-2">We pride ourselves on quality standards, value innovation and industry-recognized affiliates — delivering performance and sustained value to customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectors -->
+  <section id="sectors" class="max-w-7xl mx-auto px-6 py-14">
+    <h3 class="text-[#17803d] text-2xl font-bold mb-6">Sectors we serve</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+        <h4 class="font-semibold text-[#17803d]">Oil & Gas</h4>
+        <p class="text-gray-700 text-sm mt-2">Engineering support, compliance services, and onsite manpower for oil & gas projects.</p>
+      </div>
+      <div class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+        <h4 class="font-semibold text-[#17803d]">Renewable Energy</h4>
+        <p class="text-gray-700 text-sm mt-2">Solar power, inverter systems and energy-efficient installations.</p>
+      </div>
+      <div class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
+        <h4 class="font-semibold text-[#17803d]">Agriculture</h4>
+        <p class="text-gray-700 text-sm mt-2">Poultry, cattle and fish farm development and wholesale/retail supply services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="bg-[#f5f7f5] py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-[#17803d] text-2xl font-bold">Selected Projects</h3>
+        <a href="#contact" class="text-[#ff8c00] font-medium hover:underline">Request a case study</a>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <figure class="rounded-lg overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-36 flex items-center justify-center bg-[#f5f7f5]">
+            <svg class="w-16 h-16 text-[#17803d] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18" stroke-width="1.5"/></svg>
+          </div>
+          <figcaption class="p-4 text-gray-700">
+            <h4 class="text-[#17803d] font-semibold">Facility Maintenance — Port Harcourt</h4>
+            <p class="text-xs mt-2">Routine maintenance and asset management for a regional facility.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="rounded-lg overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-36 flex items-center justify-center bg-[#f5f7f5]">
+            <svg class="w-16 h-16 text-[#17803d] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v18" stroke-width="1.5"/></svg>
+          </div>
+          <figcaption class="p-4 text-gray-700">
+            <h4 class="text-[#17803d] font-semibold">Solar Installation — Local Community</h4>
+            <p class="text-xs mt-2">Solar microgrid and inverter work for community electrification.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="rounded-lg overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-36 flex items-center justify-center bg-[#f5f7f5]">
+            <svg class="w-16 h-16 text-[#17803d] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.5"/></svg>
+          </div>
+          <figcaption class="p-4 text-gray-700">
+            <h4 class="text-[#17803d] font-semibold">Manpower Deployment — Engineering Team</h4>
+            <p class="text-xs mt-2">Technical staff mobilized for plant operations and supervision.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h3 class="text-2xl font-bold text-[#17803d] mb-4">Get in touch</h3>
+        <p class="text-gray-700 mb-4">
+          Need an engineering, energy or agricultural partner? Reach out to our team for inquiries, project discussions or partnership opportunities.
+        </p>
+        <p class="text-gray-700">
+          <strong>Address:</strong> #24 Unity Drive, Paradise Estate, Eneka, Port Harcourt<br />
+          <strong>Email:</strong> info@nelreti.com<br />
+          <strong>Phone:</strong> +234 — (contact)
+        </p>
+      </div>
+
+      <form class="bg-[#f5f7f5] p-6 rounded-lg border border-[#e2e8f0]">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="Full Name" class="p-3 border border-[#e2e8f0] rounded-md" required />
+          <input type="email" placeholder="Email Address" class="p-3 border border-[#e2e8f0] rounded-md" required />
+        </div>
+        <input type="text" placeholder="Subject" class="p-3 border border-[#e2e8f0] rounded-md mt-4 w-full" />
+        <textarea rows="4" placeholder="Message" class="p-3 border border-[#e2e8f0] rounded-md mt-4 w-full"></textarea>
+        <button type="submit" class="mt-4 px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md hover:brightness-110 w-full">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#17803d] text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="yr"></span> Nelreti Industrial Services. All rights reserved.</p>
+      <p class="text-sm text-white/80">Engineering | Energy | Agriculture</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    
+    // Text rotator functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const items = document.querySelectorAll('.rotator-item');
+      let currentIndex = 0;
+      let interval;
+      
+      // Function to show a specific slide
+      function showSlide(index) {
+        // Remove active class from all items
+        items.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to current item
+        items[index].classList.add('active');
+        
+        currentIndex = index;
+      }
+      
+      // Function to show next slide
+      function nextSlide() {
+        let nextIndex = (currentIndex + 1) % items.length;
+        showSlide(nextIndex);
+      }
+      
+      // Start auto rotation
+      function startInterval() {
+        interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+      }
+      
+      // Reset interval when user interacts
+      function resetInterval() {
+        clearInterval(interval);
+        startInterval();
+      }
+      
+      // Initialize
+      startInterval();
+    });
+    
+    // Counter animation
+    const counters = document.querySelectorAll('[data-count]');
+    function animateCounters() {
+      counters.forEach(c => {
+        if (c.dataset.started) return;
+        const rect = c.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          c.dataset.started = "1";
+          const target = parseInt(c.getAttribute('data-count'),10) || 0;
+          const start = 0;
+          const duration = 1200;
+          let startTime = null;
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            c.textContent = Math.floor(progress * (target - start) + start) + (target.toString().includes('+') ? '+' : '');
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCounters);
+    window.addEventListener('load', animateCounters);
+  </script>
+
+</body>
+</html>
