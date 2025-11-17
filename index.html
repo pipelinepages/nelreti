@@ -69,6 +69,21 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+/* Trusted partners infinite scroll */
+@keyframes scrollHorizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollHorizontal 20s linear infinite;
+}
+
   </style>
 </head>
 
@@ -231,6 +246,31 @@
     </div>
   </section>
 
+<section class="py-10 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-center text-2xl font-bold text-[#17803d] mb-6">
+      Our Trusted Partners
+    </h3>
+
+    <div class="overflow-hidden relative">
+      <div id="partnersCarousel" class="flex items-center gap-10 animate-scroll">
+        <img src="1.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="2.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="3.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="4.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="5.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+
+        <!-- Duplicate for infinite loop -->
+        <img src="1.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="2.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="3.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="4.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+        <img src="5.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- Services -->
   <section id="services" class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -329,7 +369,7 @@
   <section id="projects" class="bg-[#f5f7f5] py-12">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex items-center justify-between">
-        <h3 class="text-[#17803d] text-2xl font-bold">Selected Projects</h3>
+        <h3 class="text-[#17803d] text-2xl font-bold">Client Results</h3>
         <a href="#contact" class="text-[#ff8c00] font-medium hover:underline">Request a case study</a>
       </div>
 
