@@ -6,6 +6,9 @@
   <title>Nelreti Industrial Services — Engineering, Energy & Agriculture</title>
   <meta name="description" content="Nelreti Industrial Services — Oil & gas engineering, well intervention, renewable energy, and agricultural solutions based in Port Harcourt, Nigeria."/>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     .hero-bg {
       background: linear-gradient(180deg, rgba(23,128,61,0.08), rgba(255,140,0,0.05));
@@ -70,20 +73,35 @@
       transform: translateY(0);
     }
 
-/* Trusted partners infinite scroll */
-@keyframes scrollHorizontal {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+    /* Trusted partners infinite scroll */
+    @keyframes scrollHorizontal {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
 
-.animate-scroll {
-  animation: scrollHorizontal 20s linear infinite;
-}
+    .animate-scroll {
+      animation: scrollHorizontal 20s linear infinite;
+    }
 
+    /* Dark theme variables */
+    :root{
+      --brand-dark:#0B0E11;
+      --card:#0F1316;
+      --muted:#94A3B8;
+    }
+
+    /* Service section styling */
+    .service-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* smooth anchor scrolling */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 
@@ -108,7 +126,7 @@
   <!-- Header -->
   <header class="sticky top-0 z-40 glass border-b border-[#e2e8f0]">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-3">
         <img src="transparent.png" alt="Nelreti Industrial Services Logo" class="h-12 w-auto object-contain" />
       </a>
 
@@ -123,14 +141,14 @@
           </button>
           <div class="dropdown-bridge"></div>
           <div class="dropdown-menu">
-            <a href="#oil-gas-engineering" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Oil & Gas Engineering</a>
-            <a href="#workover-solutions" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Workover & Well Services</a>
-            <a href="#renewable-energy" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Renewable Energy</a>
-            <a href="#agriculture" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Agriculture</a>
+            <a href="oil-gas.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Oil & Gas Engineering</a>
+            <a href="well-intervention.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Workover & Well Services</a>
+            <a href="renewable-energy.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Renewable Energy</a>
+            <a href="agriculture.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Agriculture</a>
           </div>
         </div>
         
-        <a href="#projects" class="hover:text-[#17803d]">Projects</a>
+        <a href="#projects" class="hover:text-[#17803d]">Client Results</a>
         <a href="#sectors" class="hover:text-[#17803d]">Sectors</a>
         <a href="#about" class="hover:text-[#17803d]">About</a>
         <a href="#contact" class="px-4 py-2 bg-[#ff8c00] text-white rounded-md font-semibold hover:brightness-110">Contact Us</a>
@@ -143,13 +161,13 @@
             <details class="mt-1">
               <summary class="list-none cursor-pointer py-1 hover:text-[#17803d]">Services</summary>
               <div class="ml-4 mt-1 border-l border-[#e2e8f0] pl-2">
-                <a href="#oil-gas-engineering" class="block py-1 text-sm hover:text-[#17803d]">Oil & Gas Engineering</a>
-                <a href="#workover-solutions" class="block py-1 text-sm hover:text-[#17803d]">Workover & Well Services</a>
-                <a href="#renewable-energy" class="block py-1 text-sm hover:text-[#17803d]">Renewable Energy</a>
-                <a href="#agriculture" class="block py-1 text-sm hover:text-[#17803d]">Agriculture</a>
+                <a href="oil-gas.html" class="block py-1 text-sm hover:text-[#17803d]">Oil & Gas Engineering</a>
+                <a href="well-intervention.html" class="block py-1 text-sm hover:text-[#17803d]">Workover & Well Services</a>
+                <a href="renewable-energy.html" class="block py-1 text-sm hover:text-[#17803d]">Renewable Energy</a>
+                <a href="agriculture.html" class="block py-1 text-sm hover:text-[#17803d]">Agriculture</a>
               </div>
             </details>
-            <a href="#projects" class="block py-1 hover:text-[#17803d]">Projects</a>
+            <a href="#projects" class="block py-1 hover:text-[#17803d]">Client Results</a>
             <a href="#sectors" class="block py-1 hover:text-[#17803d]">Sectors</a>
             <a href="#about" class="block py-1 hover:text-[#17803d]">About</a>
             <a href="#contact" class="block py-1 font-semibold text-[#ff8c00]">Contact Us</a>
@@ -252,58 +270,82 @@
       Our Trusted Partners
     </h3>
 
-    <div class="overflow-hidden relative">
-      <div id="partnersCarousel" class="flex items-center gap-10 animate-scroll">
-        <img src="1.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="2.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="3.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="4.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="5.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-
-        <!-- Duplicate for infinite loop -->
-        <img src="1.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="2.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="3.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="4.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-        <img src="5.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
-      </div>
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16">
+      <img src="1.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+      <img src="2.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+      <img src="3.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+      <img src="4.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
+      <img src="5.png" class="h-14 w-auto object-contain opacity-80 hover:opacity-100 transition" />
     </div>
   </div>
 </section>
 
-  <!-- Services -->
+  <!-- Services Overview -->
   <section id="services" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div class="space-y-4">
-        <p class="text-[#ff8c00] font-medium uppercase">Core Services</p>
-        <h3 class="text-2xl font-bold text-[#17803d]">What we deliver</h3>
-        <p class="text-gray-700">
-          We provide engineering, well intervention, renewable energy, and agriculture solutions that are safe, efficient, and cost-effective.
-        </p>
-        <a href="#contact" class="inline-block mt-3 px-4 py-2 bg-[#17803d] text-white rounded-md font-semibold hover:brightness-110">Discuss a project</a>
-      </div>
+    <div class="text-center mb-12">
+      <p class="text-[#ff8c00] font-medium uppercase">Our Services</p>
+      <h3 class="text-2xl font-bold text-[#17803d]">Comprehensive Industrial Solutions</h3>
+      <p class="text-gray-700 max-w-2xl mx-auto mt-4">
+        We provide engineering, well intervention, renewable energy, and agriculture solutions that are safe, efficient, and cost-effective.
+      </p>
+    </div>
 
-      <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
-          <h4 class="font-semibold text-[#17803d]">Oil & Gas Engineering</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="oil-gas.html" class="group">
+        <article class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0] h-full transition-all duration-300 group-hover:shadow-lg group-hover:border-[#17803d]">
+          <div class="service-icon text-[#17803d]">
+            <i class="fas fa-oil-well"></i>
+          </div>
+          <h4 class="font-semibold text-[#17803d] group-hover:text-[#ff8c00]">Oil & Gas Engineering</h4>
           <p class="text-gray-700 text-sm mt-2">Design, supervision, and technical support for offshore and onshore oil & gas projects.</p>
+          <div class="mt-4 text-[#ff8c00] font-medium text-sm flex items-center gap-1">
+            <span>Learn more</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
         </article>
+      </a>
 
-        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
-          <h4 class="font-semibold text-[#17803d]">Workover & Well Services</h4>
+      <a href="well-intervention.html" class="group">
+        <article class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0] h-full transition-all duration-300 group-hover:shadow-lg group-hover:border-[#17803d]">
+          <div class="service-icon text-[#17803d]">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h4 class="font-semibold text-[#17803d] group-hover:text-[#ff8c00]">Workover & Well Services</h4>
           <p class="text-gray-700 text-sm mt-2">Slickline, E-line, and well intervention solutions to maximize production and reduce downtime.</p>
+          <div class="mt-4 text-[#ff8c00] font-medium text-sm flex items-center gap-1">
+            <span>Learn more</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
         </article>
+      </a>
 
-        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
-          <h4 class="font-semibold text-[#17803d]">Renewable Energy</h4>
+      <a href="renewable-energy.html" class="group">
+        <article class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0] h-full transition-all duration-300 group-hover:shadow-lg group-hover:border-[#17803d]">
+          <div class="service-icon text-[#17803d]">
+            <i class="fas fa-solar-panel"></i>
+          </div>
+          <h4 class="font-semibold text-[#17803d] group-hover:text-[#ff8c00]">Renewable Energy</h4>
           <p class="text-gray-700 text-sm mt-2">Solar panels, inverters, and sustainable energy solutions for industrial and commercial clients.</p>
+          <div class="mt-4 text-[#ff8c00] font-medium text-sm flex items-center gap-1">
+            <span>Learn more</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
         </article>
+      </a>
 
-        <article class="p-5 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0]">
-          <h4 class="font-semibold text-[#17803d]">Agriculture Solutions</h4>
+      <a href="agriculture.html" class="group">
+        <article class="p-6 rounded-lg bg-[#f5f7f5] border border-[#e2e8f0] h-full transition-all duration-300 group-hover:shadow-lg group-hover:border-[#17803d]">
+          <div class="service-icon text-[#17803d]">
+            <i class="fas fa-tractor"></i>
+          </div>
+          <h4 class="font-semibold text-[#17803d] group-hover:text-[#ff8c00]">Agriculture Solutions</h4>
           <p class="text-gray-700 text-sm mt-2">Poultry, cattle, and fish farms; wholesale and retail supply chain solutions.</p>
+          <div class="mt-4 text-[#ff8c00] font-medium text-sm flex items-center gap-1">
+            <span>Learn more</span>
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </div>
         </article>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -396,7 +438,7 @@
 
         <figure class="rounded-lg overflow-hidden border border-[#e2e8f0] bg-white">
           <div class="h-36 flex items-center justify-center bg-[#f5f7f5]">
-            <svg class="w-16 h-16 text-[#17803d] opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.5"/></svg>
+            <img src="client3.png" alt="Well Intervention Project" class="h-24 w-auto object-contain" />
           </div>
           <figcaption class="p-4 text-gray-700">
             <h4 class="text-[#17803d] font-semibold">Well Intervention — Engineering Team</h4>
@@ -442,7 +484,17 @@
     </div>
   </footer>
 
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-quart',
+      once: true,
+      offset: 80
+    });
+
     document.getElementById('yr').textContent = new Date().getFullYear();
     
     document.addEventListener('DOMContentLoaded', function() {
