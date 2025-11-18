@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Well Intervention Services | Nelreti Industrial Services</title>
+  <meta name="description" content="Specialized well intervention services including workover, wireline, slickline, and production optimization solutions."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root{
+      --brand-dark:#0B0E11;
+      --card:#0F1316;
+      --muted:#94A3B8;
+    }
+    html { scroll-behavior: smooth; }
+    
+    /* Improved dropdown styles */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* Add slight delay for dropdown closing */
+    .dropdown-menu {
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+  </style>
+</head>
+
+<body class="antialiased text-[#1a1a1a] bg-white">
+
+  <!-- Top bar -->
+  <div class="bg-[#17803d] text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <svg class="w-4 h-4 text-[#ff8c00]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 8v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Office: #24 Unity Drive, Paradise Estate, Eneka, Port Harcourt, Rivers State</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:info@nelreti.com" class="hover:underline text-white">info@nelreti.com</a>
+        <a href="tel:+234" class="hover:underline text-white">+234 — (contact)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white border-b border-[#e2e8f0]">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="transparent.png" alt="Nelreti Industrial Services Logo" class="h-12 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[#1a1a1a] font-medium">
+        <!-- Services Dropdown - Fixed -->
+        <div class="dropdown relative">
+          <button class="hover:text-[#17803d] flex items-center gap-1">
+            Services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-[#e2e8f0] z-50 hidden">
+            <a href="oil-gas.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Oil & Gas Engineering</a>
+            <a href="well-intervention.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d] bg-[#f5f7f5] text-[#17803d]">Workover & Well Services</a>
+            <a href="renewable-energy.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Renewable Energy</a>
+            <a href="agriculture.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Agriculture</a>
+          </div>
+        </div>
+        
+        <a href="index.html#projects" class="hover:text-[#17803d]">Client Results</a>
+        <a href="index.html#sectors" class="hover:text-[#17803d]">Sectors</a>
+        <a href="index.html#about" class="hover:text-[#17803d]">About</a>
+        <a href="index.html#contact" class="px-4 py-2 bg-[#ff8c00] text-white rounded-md font-semibold hover:brightness-110">Contact Us</a>
+      </nav>
+
+      <div class="md:hidden">
+        <details class="relative">
+          <summary class="list-none cursor-pointer px-3 py-2 bg-[#f5f7f5] rounded-md border border-[#e2e8f0]">Menu</summary>
+          <div class="absolute right-0 mt-2 w-48 bg-white border border-[#e2e8f0] p-3 rounded-md shadow-lg">
+            <details class="mt-1">
+              <summary class="list-none cursor-pointer py-1 hover:text-[#17803d]">Services</summary>
+              <div class="ml-4 mt-1 border-l border-[#e2e8f0] pl-2">
+                <a href="oil-gas.html" class="block py-1 text-sm hover:text-[#17803d]">Oil & Gas Engineering</a>
+                <a href="well-intervention.html" class="block py-1 text-sm hover:text-[#17803d] bg-[#f5f7f5] text-[#17803d]">Workover & Well Services</a>
+                <a href="renewable-energy.html" class="block py-1 text-sm hover:text-[#17803d]">Renewable Energy</a>
+                <a href="agriculture.html" class="block py-1 text-sm hover:text-[#17803d]">Agriculture</a>
+              </div>
+            </details>
+            <a href="index.html#projects" class="block py-1 hover:text-[#17803d]">Client Results</a>
+            <a href="index.html#sectors" class="block py-1 hover:text-[#17803d]">Sectors</a>
+            <a href="index.html#about" class="block py-1 hover:text-[#17803d]">About</a>
+            <a href="index.html#contact" class="block py-1 font-semibold text-[#ff8c00]">Contact Us</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-r from-[#07101a] to-[#0b0f12] py-16 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <span>/</span>
+        <a href="index.html#services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-white">Well Intervention</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Well Intervention Services</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">Specialized well intervention services to diagnose, recover and optimize production.</p>
+    </div>
+  </section>
+
+  <!-- Service Content -->
+  <section class="py-16 bg-white text-slate-800" data-aos="fade-left">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="md:flex md:items-start md:justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold">Well Intervention (Workover, Wireline & Slickline)</h2>
+          <p class="mt-2 text-sm text-slate-500 max-w-xl">Specialist well services to diagnose, recover and optimize production.</p>
+        </div>
+        <div class="hidden md:flex items-center gap-4 mt-4 md:mt-0">
+          <a href="index.html#contact" class="px-4 py-2 rounded-lg bg-gradient-to-r from-[#ff8c00] to-[#ff9e2c] text-white font-semibold">Book a Site Visit</a>
+        </div>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="60">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-chart-line text-[#17803d]"></i>
+            <h3 class="font-semibold">Production Logging</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Real-time downhole logging to assess reservoir and flow profiles.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="90">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-gauge text-[#17803d]"></i>
+            <h3 class="font-semibold">Cement Bond Logging</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Cement evaluation and zonal isolation verification.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="120">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-dna text-[#17803d]"></i>
+            <h3 class="font-semibold">Carbon-Oxygen Logging</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Specialized logging to identify formation saturations.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="150">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-scissors text-[#17803d]"></i>
+            <h3 class="font-semibold">Pipe Recovery & Heavy-Duty Fishing</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Mechanical recovery of stuck pipe and downhole obstructions.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="180">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-thermometer text-[#17803d]"></i>
+            <h3 class="font-semibold">Pressure & Temperature Surveys (DHSIT)</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">High-precision P/T surveys for well diagnostics.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="210">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-box text-[#17803d]"></i>
+            <h3 class="font-semibold">Sand Bailing & Gas Lift Straddle</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Sand management and production enhancement services.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="240">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-search text-[#17803d]"></i>
+            <h3 class="font-semibold">Tubing Leak Testing / Detection</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Leak diagnostics and pressure integrity testing.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="270">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-filter text-[#17803d]"></i>
+            <h3 class="font-semibold">Bridge Plugs, Packers & Perforation</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Setting/retrieval of plugs, packers and precision perforation.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="300">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-toolbox text-[#17803d]"></i>
+            <h3 class="font-semibold">Workover / Completion Tools</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Tooling for efficient workover and completion campaigns.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="330">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-bolt text-[#17803d]"></i>
+            <h3 class="font-semibold">Pulling & Setting of Nipple-less Bridge Plugs</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Specialist operations for complex well interventions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Projects -->
+  <section class="py-16 bg-[#f5f7f5]">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-[#17803d] mb-8">Related Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="rounded-xl overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-48 flex items-center justify-center bg-[#f5f7f5]">
+            <img src="well-intervention-project.jpg" alt="Well Intervention" class="h-full w-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#17803d]">Production Enhancement Project</h3>
+            <p class="text-gray-700 mt-2">Comprehensive well intervention program to restore production in mature oil fields.</p>
+            <a href="index.html#projects" class="inline-block mt-4 text-[#ff8c00] font-medium">View Project →</a>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-48 flex items-center justify-center bg-[#f5f7f5]">
+            <img src="client3.png" alt="Well Services" class="h-full w-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#17803d]">Wireline & Slickline Services</h3>
+            <p class="text-gray-700 mt-2">Specialized wireline and slickline operations for well diagnostics and maintenance.</p>
+            <a href="index.html#projects" class="inline-block mt-4 text-[#ff8c00] font-medium">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-[#07101a] to-[#0b0f12] text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-2xl font-bold text-white mb-4">Need Well Intervention Solutions?</h3>
+      <p class="text-gray-300 max-w-2xl mx-auto mb-6">Contact us to discuss your well intervention requirements and optimize production.</p>
+      <div class="flex justify-center gap-4">
+        <a href="index.html#contact" class="px-6 py-3 bg-gradient-to-r from-[#17803d] to-[#1e9e50] text-white font-semibold rounded-lg">Get a Quote</a>
+        <a href="index.html" class="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#17803d] text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="yr"></span> Nelreti Industrial Services. All rights reserved.</p>
+      <p class="text-sm text-white/80">Oil & Gas | Renewable Energy | Agriculture</p>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-quart',
+      once: true,
+      offset: 80
+    });
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Enhanced dropdown functionality
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    let dropdownTimeout;
+    
+    // Show dropdown on hover
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(dropdownTimeout);
+      dropdownMenu.classList.remove('hidden');
+    });
+    
+    // Hide dropdown with delay when leaving the dropdown area
+    dropdown.addEventListener('mouseleave', () => {
+      dropdownTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 200); // 200ms delay
+    });
+    
+    // Keep dropdown open when moving to menu
+    dropdownMenu.addEventListener('mouseenter', () => {
+      clearTimeout(dropdownTimeout);
+    });
+    
+    // Hide dropdown when leaving menu
+    dropdownMenu.addEventListener('mouseleave', () => {
+      dropdownTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 200);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agriculture Solutions | Nelreti Industrial Services</title>
+  <meta name="description" content="Integrated livestock, agriculture and distribution services for commercial farming and retail supply."/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root{
+      --brand-dark:#0B0E11;
+      --card:#0F1316;
+      --muted:#94A3B8;
+    }
+    html { scroll-behavior: smooth; }
+    
+    /* Improved dropdown styles */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* Add slight delay for dropdown closing */
+    .dropdown-menu {
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+  </style>
+</head>
+
+<body class="antialiased text-[#1a1a1a] bg-white">
+
+  <!-- Top bar -->
+  <div class="bg-[#17803d] text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-3">
+        <svg class="w-4 h-4 text-[#ff8c00]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 8v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Office: #24 Unity Drive, Paradise Estate, Eneka, Port Harcourt, Rivers State</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:info@nelreti.com" class="hover:underline text-white">info@nelreti.com</a>
+        <a href="tel:+234" class="hover:underline text-white">+234 — (contact)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white border-b border-[#e2e8f0]">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="transparent.png" alt="Nelreti Industrial Services Logo" class="h-12 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[#1a1a1a] font-medium">
+        <!-- Services Dropdown - Fixed -->
+        <div class="dropdown relative">
+          <button class="hover:text-[#17803d] flex items-center gap-1">
+            Services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-[#e2e8f0] z-50 hidden">
+            <a href="oil-gas.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Oil & Gas Engineering</a>
+            <a href="well-intervention.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Workover & Well Services</a>
+            <a href="renewable-energy.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d]">Renewable Energy</a>
+            <a href="agriculture.html" class="block px-4 py-2 hover:bg-[#f5f7f5] hover:text-[#17803d] bg-[#f5f7f5] text-[#17803d]">Agriculture</a>
+          </div>
+        </div>
+        
+        <a href="index.html#projects" class="hover:text-[#17803d]">Client Results</a>
+        <a href="index.html#sectors" class="hover:text-[#17803d]">Sectors</a>
+        <a href="index.html#about" class="hover:text-[#17803d]">About</a>
+        <a href="index.html#contact" class="px-4 py-2 bg-[#ff8c00] text-white rounded-md font-semibold hover:brightness-110">Contact Us</a>
+      </nav>
+
+      <div class="md:hidden">
+        <details class="relative">
+          <summary class="list-none cursor-pointer px-3 py-2 bg-[#f5f7f5] rounded-md border border-[#e2e8f0]">Menu</summary>
+          <div class="absolute right-0 mt-2 w-48 bg-white border border-[#e2e8f0] p-3 rounded-md shadow-lg">
+            <details class="mt-1">
+              <summary class="list-none cursor-pointer py-1 hover:text-[#17803d]">Services</summary>
+              <div class="ml-4 mt-1 border-l border-[#e2e8f0] pl-2">
+                <a href="oil-gas.html" class="block py-1 text-sm hover:text-[#17803d]">Oil & Gas Engineering</a>
+                <a href="well-intervention.html" class="block py-1 text-sm hover:text-[#17803d]">Workover & Well Services</a>
+                <a href="renewable-energy.html" class="block py-1 text-sm hover:text-[#17803d]">Renewable Energy</a>
+                <a href="agriculture.html" class="block py-1 text-sm hover:text-[#17803d] bg-[#f5f7f5] text-[#17803d]">Agriculture</a>
+              </div>
+            </details>
+            <a href="index.html#projects" class="block py-1 hover:text-[#17803d]">Client Results</a>
+            <a href="index.html#sectors" class="block py-1 hover:text-[#17803d]">Sectors</a>
+            <a href="index.html#about" class="block py-1 hover:text-[#17803d]">About</a>
+            <a href="index.html#contact" class="block py-1 font-semibold text-[#ff8c00]">Contact Us</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-r from-[#07101a] to-[#0b0f12] py-16 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-2 text-sm text-gray-400 mb-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <span>/</span>
+        <a href="index.html#services" class="hover:text-white">Services</a>
+        <span>/</span>
+        <span class="text-white">Agriculture</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Agriculture Solutions</h1>
+      <p class="text-lg text-gray-300 max-w-3xl">Integrated livestock, aquaculture and distribution services for B2B and retail.</p>
+    </div>
+  </section>
+
+  <!-- Service Content -->
+  <section class="py-16 bg-white text-slate-800" data-aos="fade-up">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="md:flex md:items-start md:justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold">Agriculture (Commercial Farming & Supply)</h2>
+          <p class="mt-2 text-sm text-slate-500 max-w-xl">Integrated livestock, aquaculture and distribution services for B2B and retail.</p>
+        </div>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="70">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-egg text-[#17803d]"></i>
+            <h3 class="font-semibold">Poultry Farming</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Layer and broiler operations, feed supply and hatchery support.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="110">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-cow text-[#17803d]"></i>
+            <h3 class="font-semibold">Cattle Farming</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Commercial cattle rearing and herd health management.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="150">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-fish text-[#17803d]"></i>
+            <h3 class="font-semibold">Fish Farming</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Recirculating aquaculture and pond-based systems for scale.</p>
+        </article>
+
+        <article class="p-5 rounded-xl border border-gray-100 hover:shadow transition" data-aos="zoom-in" data-aos-delay="190">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-shopping-cart text-[#17803d]"></i>
+            <h3 class="font-semibold">Wholesale & Retail Supply</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-500">Distribution, cold chain logistics and retail supply services.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farming Details -->
+  <section class="py-16 bg-[#f5f7f5]">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-[#17803d] text-center mb-12">Our Farming Operations</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 border border-[#e2e8f0]" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-egg text-2xl text-[#17803d]"></i>
+            <h3 class="text-xl font-bold text-[#17803d]">Poultry Operations</h3>
+          </div>
+          <ul class="text-gray-700 space-y-2">
+            <li>• Large-scale layer and broiler operations</li>
+            <li>• Modern hatchery with capacity for 50,000 chicks</li>
+            <li>• Feed production and nutritional planning</li>
+            <li>• Disease prevention and biosecurity measures</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-[#e2e8f0]" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-cow text-2xl text-[#17803d]"></i>
+            <h3 class="text-xl font-bold text-[#17803d]">Cattle Farming</h3>
+          </div>
+          <ul class="text-gray-700 space-y-2">
+            <li>• Commercial cattle rearing operations</li>
+            <li>• Herd health management and veterinary care</li>
+            <li>• Pasture management and feed optimization</li>
+            <li>• Breeding programs for genetic improvement</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-[#e2e8f0]" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-fish text-2xl text-[#17803d]"></i>
+            <h3 class="text-xl font-bold text-[#17803d]">Aquaculture</h3>
+          </div>
+          <ul class="text-gray-700 space-y-2">
+            <li>• Recirculating aquaculture systems (RAS)</li>
+            <li>• Pond-based fish farming operations</li>
+            <li>• Fingerling production and stocking</li>
+            <li>• Water quality management and monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Projects -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-[#17803d] mb-8">Related Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="rounded-xl overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-48 flex items-center justify-center bg-[#f5f7f5]">
+            <img src="poultry-project.jpg" alt="Poultry Farm" class="h-full w-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#17803d]">Commercial Poultry Farm</h3>
+            <p class="text-gray-700 mt-2">Establishment of 20,000-bird capacity poultry farm with modern facilities.</p>
+            <a href="index.html#projects" class="inline-block mt-4 text-[#ff8c00] font-medium">View Project →</a>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden border border-[#e2e8f0] bg-white">
+          <div class="h-48 flex items-center justify-center bg-[#f5f7f5]">
+            <img src="fish-farm-project.jpg" alt="Fish Farm" class="h-full w-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#17803d]">Aquaculture Development</h3>
+            <p class="text-gray-700 mt-2">Development of commercial fish farming operation with processing facility.</p>
+            <a href="index.html#projects" class="inline-block mt-4 text-[#ff8c00] font-medium">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-[#07101a] to-[#0b0f12] text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <h3 class="text-2xl font-bold text-white mb-4">Interested in Agriculture Solutions?</h3>
+      <p class="text-gray-300 max-w-2xl mx-auto mb-6">Contact us to discuss your agricultural needs and develop sustainable farming solutions.</p>
+      <div class="flex justify-center gap-4">
+        <a href="index.html#contact" class="px-6 py-3 bg-gradient-to-r from-[#17803d] to-[#1e9e50] text-white font-semibold rounded-lg">Get a Quote</a>
+        <a href="index.html" class="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#17803d] text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; <span id="yr"></span> Nelreti Industrial Services. All rights reserved.</p>
+      <p class="text-sm text-white/80">Oil & Gas | Renewable Energy | Agriculture</p>
+    </div>
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 700,
+      easing: 'ease-out-quart',
+      once: true,
+      offset: 80
+    });
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Enhanced dropdown functionality
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    let dropdownTimeout;
+    
+    // Show dropdown on hover
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(dropdownTimeout);
+      dropdownMenu.classList.remove('hidden');
+    });
+    
+    // Hide dropdown with delay when leaving the dropdown area
+    dropdown.addEventListener('mouseleave', () => {
+      dropdownTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 200); // 200ms delay
+    });
+    
+    // Keep dropdown open when moving to menu
+    dropdownMenu.addEventListener('mouseenter', () => {
+      clearTimeout(dropdownTimeout);
+    });
+    
+    // Hide dropdown when leaving menu
+    dropdownMenu.addEventListener('mouseleave', () => {
+      dropdownTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 200);
+    });
+  </script>
+
+</body>
+</html>
