@@ -16,6 +16,16 @@
       --muted:#94A3B8;
     }
     html { scroll-behavior: smooth; }
+    
+    /* Improved dropdown styles */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    /* Add slight delay for dropdown closing */
+    .dropdown-menu {
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
   </style>
 </head>
 
@@ -256,16 +266,34 @@
 
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Dropdown functionality
+    // Enhanced dropdown functionality
     const dropdown = document.querySelector('.dropdown');
     const dropdownMenu = document.querySelector('.dropdown-menu');
+    let dropdownTimeout;
     
+    // Show dropdown on hover
     dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(dropdownTimeout);
       dropdownMenu.classList.remove('hidden');
     });
     
+    // Hide dropdown with delay when leaving the dropdown area
     dropdown.addEventListener('mouseleave', () => {
-      dropdownMenu.classList.add('hidden');
+      dropdownTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 200); // 200ms delay
+    });
+    
+    // Keep dropdown open when moving to menu
+    dropdownMenu.addEventListener('mouseenter', () => {
+      clearTimeout(dropdownTimeout);
+    });
+    
+    // Hide dropdown when leaving menu
+    dropdownMenu.addEventListener('mouseleave', () => {
+      dropdownTimeout = setTimeout(() => {
+        dropdownMenu.classList.add('hidden');
+      }, 200);
     });
   </script>
 
