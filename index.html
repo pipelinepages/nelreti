@@ -705,7 +705,17 @@
       showSlide(0);
       startInterval();
       
+      // Pause rotation on hover (optional)
+      const heroSection = document.querySelector('.rotator-container');
+      const imageSection = document.querySelector('.image-rotator-container');
       
+      [heroSection, imageSection].forEach(section => {
+        if (section) {
+          section.addEventListener('mouseenter', () => clearInterval(interval));
+          section.addEventListener('mouseleave', startInterval);
+        }
+      });
+    });
     
     // Counter animation
     const counters = document.querySelectorAll('[data-count]');
@@ -735,5 +745,3 @@
 
 </body>
 </html>
-
-
