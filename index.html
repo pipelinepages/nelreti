@@ -73,11 +73,49 @@
       transform: translateY(0);
     }
     
-    /* Image rotator styles */
+    /* UPDATED: Image rotator with full-width gradient overlay */
     .image-rotator-container {
       position: relative;
       height: 100%;
       overflow: hidden;
+      border-radius: 12px;
+      width: 100%;
+    }
+    
+    /* Gradient overlay that fades from right (transparent) to left (white) */
+    .image-rotator-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.85) 15%, 
+        rgba(255, 255, 255, 0.7) 30%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0.15) 70%, 
+        rgba(255, 255, 255, 0) 85%);
+      z-index: 2;
+      pointer-events: none;
+      border-radius: 12px;
+    }
+    
+    /* Alternative stronger gradient for better text readability */
+    .image-rotator-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.8) 25%, 
+        rgba(255, 255, 255, 0) 50%);
+      z-index: 2;
+      pointer-events: none;
       border-radius: 12px;
     }
     
@@ -91,11 +129,30 @@
       transform: scale(1.05);
       transition: opacity 0.8s ease, transform 0.8s ease;
       object-fit: cover;
+      z-index: 1;
     }
     
     .image-rotator-item.active {
       opacity: 1;
       transform: scale(1);
+    }
+
+    /* For mobile: adjust gradient to be more vertical */
+    @media (max-width: 1024px) {
+      .image-rotator-container::before {
+        background: linear-gradient(180deg, 
+          rgba(255, 255, 255, 0.9) 0%, 
+          rgba(255, 255, 255, 0.7) 15%, 
+          rgba(255, 255, 255, 0.4) 40%, 
+          rgba(255, 255, 255, 0) 70%);
+      }
+      
+      .image-rotator-container::after {
+        background: linear-gradient(180deg, 
+          rgba(255, 255, 255, 0.95) 0%, 
+          rgba(255, 255, 255, 0.75) 30%, 
+          rgba(255, 255, 255, 0) 60%);
+      }
     }
 
     /* Trusted partners infinite scroll */
@@ -127,6 +184,51 @@
 
     /* smooth anchor scrolling */
     html { scroll-behavior: smooth; }
+    
+    /* UPDATED: Content-safe text overlay - 50% width */
+    .hero-text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      z-index: 3;
+      padding: 2rem;
+      width: 50%;
+      max-width: 600px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Hero section container - original height */
+    .hero-section-container {
+      position: relative;
+      min-height: 600px;
+      height: 80vh;
+      max-height: 900px;
+    }
+    
+    @media (max-width: 1024px) {
+      .hero-text-overlay {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 90%;
+        max-width: 100%;
+        margin: 2rem auto;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+      }
+      
+      .hero-section-container {
+        min-height: auto;
+        height: auto;
+        max-height: none;
+        padding: 2rem 0;
+      }
+    }
   </style>
 </head>
 
@@ -206,10 +308,11 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero - UPDATED: Full-width image with 50% width text overlay -->
   <section class="hero-bg">
-    <div class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <div class="space-y-6">
+    <div class="max-w-7xl mx-auto px-6 hero-section-container flex items-center">
+      <!-- Text content as overlay - 50% width -->
+      <div class="hero-text-overlay">
         <p class="text-[#ff8c00] font-medium uppercase tracking-wide">Trusted • Reliable • Professional</p>
         
         <div class="rotator-container">
@@ -270,7 +373,7 @@
           </div>
         </div>
 
-        <div class="flex gap-4">
+        <div class="flex gap-4 mt-6">
           <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md shadow hover:scale-[1.01]">Get a Quote</a>
           <a href="#services" class="inline-flex items-center gap-2 px-5 py-3 border border-[#17803d] rounded-md text-[#17803d] hover:bg-[#17803d]/10">Our Services</a>
         </div>
@@ -288,22 +391,18 @@
         </div>
       </div>
 
-      <div class="space-y-6">
-        <!-- Updated hero image section with rotator -->
-        <div class="rounded-xl overflow-hidden shadow-lg border border-[#e2e8f0] h-64 lg:h-80">
-          <div class="image-rotator-container">
-            <img src="hero/oil.png" alt="Oil & Gas Engineering" class="image-rotator-item active" data-index="0" />
-            <img src="hero/well.png" alt="Workover & Well Services" class="image-rotator-item" data-index="1" />
-            <img src="hero/renewable.png" alt="Renewable Energy" class="image-rotator-item" data-index="2" />
-            <img src="hero/agric.jpg" alt="Agriculture Solutions" class="image-rotator-item" data-index="3" />
-            <!-- ADDED: EPIC image -->
-            <img src="hero/epic.jpg" alt="Engineering Procurement Installation & Construction" class="image-rotator-item" data-index="4" />
-            <!-- ADDED: Corporate Services image -->
-            <img src="hero/corporate.png" alt="Corporate Services" class="image-rotator-item" data-index="5" />
-          </div>
+      <!-- Full-width image rotator -->
+      <div class="absolute inset-0 rounded-xl overflow-hidden shadow-lg border border-[#e2e8f0] z-1">
+        <div class="image-rotator-container w-full h-full">
+          <img src="hero/oil.png" alt="Oil & Gas Engineering" class="image-rotator-item active" data-index="0" />
+          <img src="hero/well.png" alt="Workover & Well Services" class="image-rotator-item" data-index="1" />
+          <img src="hero/renewable.png" alt="Renewable Energy" class="image-rotator-item" data-index="2" />
+          <img src="hero/agric.jpg" alt="Agriculture Solutions" class="image-rotator-item" data-index="3" />
+          <!-- ADDED: EPIC image -->
+          <img src="hero/epic.jpg" alt="Engineering Procurement Installation & Construction" class="image-rotator-item" data-index="4" />
+          <!-- ADDED: Corporate Services image -->
+          <img src="hero/corporate.png" alt="Corporate Services" class="image-rotator-item" data-index="5" />
         </div>
-
-        
       </div>
     </div>
   </section>
@@ -646,8 +745,3 @@
 
 </body>
 </html>
-
-
-
-
-
