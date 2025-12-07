@@ -698,23 +698,20 @@
       }
       
       function startInterval() {
-        interval = setInterval(nextSlide, 3000); // Rotate every 5 seconds
+        interval = setInterval(nextSlide, 5000); // Rotate every 5 seconds
       }
       
       // Initialize with first slide
       showSlide(0);
       startInterval();
       
-      // Pause rotation on hover (optional)
-      const heroSection = document.querySelector('.rotator-container');
-      const imageSection = document.querySelector('.image-rotator-container');
+      // Pause rotation on hover - ONLY on text overlay
+      const textOverlay = document.querySelector('.hero-text-overlay');
       
-      [heroSection, imageSection].forEach(section => {
-        if (section) {
-          section.addEventListener('mouseenter', () => clearInterval(interval));
-          section.addEventListener('mouseleave', startInterval);
-        }
-      });
+      if (textOverlay) {
+        textOverlay.addEventListener('mouseenter', () => clearInterval(interval));
+        textOverlay.addEventListener('mouseleave', startInterval);
+      }
     });
     
     // Counter animation
