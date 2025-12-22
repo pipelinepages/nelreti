@@ -229,6 +229,27 @@
         padding: 2rem 0;
       }
     }
+
+    /* Form success message */
+    .form-success {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-error {
+      display: none;
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 
@@ -245,7 +266,6 @@
       </div>
       <div class="flex items-center gap-4">
         <a href="mailto:info@nelreti.com" class="hover:underline text-white">info@nelreti.com</a>
-        <a href="tel:+234" class="hover:underline text-white">+234 — (contact)</a>
       </div>
     </div>
   </div>
@@ -667,19 +687,58 @@
         <p class="text-gray-700">
           <strong>Address:</strong> #24 Unity Drive, Paradise Estate, Eneka, Port Harcourt<br />
           <strong>Email:</strong> info@nelreti.com<br />
-          <strong>Phone:</strong> +234 — (contact)
+        </p>
+        <p class="mt-4 text-sm text-gray-600">
+          <i class="fas fa-whatsapp text-green-500 mr-1"></i> Messages will be sent to our WhatsApp: +447903984267
         </p>
       </div>
 
-      <form class="bg-[#f5f7f5] p-6 rounded-lg border border-[#e2e8f0]">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <input type="text" placeholder="Full Name" class="p-3 border border-[#e2e8f0] rounded-md" required />
-          <input type="email" placeholder="Email Address" class="p-3 border border-[#e2e8f0] rounded-md" required />
+      <!-- WhatsApp Contact Form -->
+      <div class="bg-[#f5f7f5] p-6 rounded-lg border border-[#e2e8f0]">
+        <div id="form-success" class="form-success">
+          <i class="fas fa-check-circle mr-2"></i> Your message has been prepared! A WhatsApp window will open for you to send it.
         </div>
-        <input type="text" placeholder="Subject" class="p-3 border border-[#e2e8f0] rounded-md mt-4 w-full" />
-        <textarea rows="4" placeholder="Message" class="p-3 border border-[#e2e8f0] rounded-md mt-4 w-full"></textarea>
-        <button type="submit" class="mt-4 px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md hover:brightness-110 w-full">Send Message</button>
-      </form>
+        
+        <div id="form-error" class="form-error">
+          <i class="fas fa-exclamation-circle mr-2"></i> Please fill in all required fields (Name, Email, and Message).
+        </div>
+        
+        <form id="whatsapp-form">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <input type="text" id="name" name="name" placeholder="Full Name *" class="p-3 border border-[#e2e8f0] rounded-md w-full" required />
+            </div>
+            <div>
+              <input type="email" id="email" name="email" placeholder="Email Address *" class="p-3 border border-[#e2e8f0] rounded-md w-full" required />
+            </div>
+          </div>
+          <div>
+            <input type="text" id="subject" name="subject" placeholder="Subject" class="p-3 border border-[#e2e8f0] rounded-md mt-4 w-full" />
+          </div>
+          <div>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message *" class="p-3 border border-[#e2e8f0] rounded-md mt-4 w-full" required></textarea>
+          </div>
+          
+          <!-- Service Selection -->
+          <div class="mt-4">
+            <label class="block text-gray-700 text-sm font-medium mb-2">Service Interested In (Optional)</label>
+            <select id="service" name="service" class="p-3 border border-[#e2e8f0] rounded-md w-full">
+              <option value="">Select a service</option>
+              <option value="Oil & Gas Engineering">Oil & Gas Engineering</option>
+              <option value="Workover & Well Services">Workover & Well Services</option>
+              <option value="Renewable Energy">Renewable Energy</option>
+              <option value="Agriculture Solutions">Agriculture Solutions</option>
+              <option value="Construction">Construction</option>
+              <option value="Engineering Procurement Installation & Construction">Engineering Procurement Installation & Construction</option>
+              <option value="Corporate Services">Corporate Services</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="mt-6 px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md hover:brightness-110 w-full flex items-center justify-center">
+            <i class="fab fa-whatsapp mr-2 text-lg"></i> Send via WhatsApp
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -771,8 +830,65 @@
     }
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
+
+    // WhatsApp Form Submission
+    document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide previous messages
+      document.getElementById('form-success').style.display = 'none';
+      document.getElementById('form-error').style.display = 'none';
+      
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const service = document.getElementById('service').value;
+      
+      // Validate required fields
+      if (!name || !email || !message) {
+        document.getElementById('form-error').style.display = 'block';
+        return;
+      }
+      
+      // Format the message for WhatsApp
+      let whatsappMessage = `*New Contact Form Submission - Nelreti Industrial Services*%0A%0A`;
+      whatsappMessage += `*Name:* ${name}%0A`;
+      whatsappMessage += `*Email:* ${email}%0A`;
+      
+      if (subject) {
+        whatsappMessage += `*Subject:* ${subject}%0A`;
+      }
+      
+      if (service) {
+        whatsappMessage += `*Service Interested In:* ${service}%0A`;
+      }
+      
+      whatsappMessage += `%0A*Message:*%0A${message}%0A%0A`;
+      whatsappMessage += `_Submitted via nelreti.com website_`;
+      
+      // Encode the message for URL
+      const encodedMessage = encodeURIComponent(whatsappMessage).replace(/'/g, "%27").replace(/"/g, "%22");
+      
+      // Create WhatsApp URL
+      const phoneNumber = "+447903984267";
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      // Show success message
+      document.getElementById('form-success').style.display = 'block';
+      
+      // Clear form after a delay
+      setTimeout(() => {
+        document.getElementById('whatsapp-form').reset();
+      }, 1000);
+      
+      // Open WhatsApp in a new tab
+      setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+      }, 1500);
+    });
   </script>
 
 </body>
 </html>
-
