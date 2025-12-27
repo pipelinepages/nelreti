@@ -82,7 +82,7 @@
       width: 100%;
     }
     
-    /* Updated gradient overlay for better text contrast */
+    /* Gradient overlay that fades from right (transparent) to left (white) */
     .image-rotator-container::before {
       content: '';
       position: absolute;
@@ -91,15 +91,18 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.6) 0%, 
-        rgba(0, 0, 0, 0.4) 20%, 
-        rgba(0, 0, 0, 0.2) 40%, 
-        rgba(0, 0, 0, 0) 70%);
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.85) 15%, 
+        rgba(255, 255, 255, 0.7) 30%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        rgba(255, 255, 255, 0.15) 70%, 
+        rgba(255, 255, 255, 0) 85%);
       z-index: 2;
       pointer-events: none;
       border-radius: 12px;
     }
     
+    /* Alternative stronger gradient for better text readability */
     .image-rotator-container::after {
       content: '';
       position: absolute;
@@ -108,10 +111,9 @@
       right: 0;
       bottom: 0;
       background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.7) 0%, 
-        rgba(0, 0, 0, 0.5) 25%, 
-        rgba(0, 0, 0, 0.2) 45%, 
-        rgba(0, 0, 0, 0) 65%);
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(255, 255, 255, 0.8) 25%, 
+        rgba(255, 255, 255, 0) 50%);
       z-index: 2;
       pointer-events: none;
       border-radius: 12px;
@@ -135,22 +137,21 @@
       transform: scale(1);
     }
 
-    /* For mobile: adjust gradient to be more vertical and stronger at top */
+    /* For mobile: adjust gradient to be more vertical */
     @media (max-width: 1024px) {
       .image-rotator-container::before {
         background: linear-gradient(180deg, 
-          rgba(0, 0, 0, 0.8) 0%, 
-          rgba(0, 0, 0, 0.6) 20%, 
-          rgba(0, 0, 0, 0.4) 40%, 
-          rgba(0, 0, 0, 0) 70%);
+          rgba(255, 255, 255, 0.9) 0%, 
+          rgba(255, 255, 255, 0.7) 15%, 
+          rgba(255, 255, 255, 0.4) 40%, 
+          rgba(255, 255, 255, 0) 70%);
       }
       
       .image-rotator-container::after {
         background: linear-gradient(180deg, 
-          rgba(0, 0, 0, 0.9) 0%, 
-          rgba(0, 0, 0, 0.7) 30%, 
-          rgba(0, 0, 0, 0.4) 50%, 
-          rgba(0, 0, 0, 0) 80%);
+          rgba(255, 255, 255, 0.95) 0%, 
+          rgba(255, 255, 255, 0.75) 30%, 
+          rgba(255, 255, 255, 0) 60%);
       }
     }
 
@@ -184,7 +185,7 @@
     /* smooth anchor scrolling */
     html { scroll-behavior: smooth; }
     
-    /* UPDATED: Content-safe text overlay - transparent background */
+    /* UPDATED: Content-safe text overlay - 50% width */
     .hero-text-overlay {
       position: absolute;
       top: 50%;
@@ -195,36 +196,9 @@
       width: 50%;
       max-width: 600px;
       border-radius: 8px;
-      /* REMOVED: background, backdrop-filter, box-shadow */
-      background: transparent;
-      backdrop-filter: none;
-      box-shadow: none;
-    }
-    
-    /* Text styles for better readability on images */
-    .hero-text-overlay h2,
-    .hero-text-overlay h3,
-    .hero-text-overlay h4 {
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
-    
-    .hero-text-overlay p {
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    }
-    
-    .hero-text-overlay .text-gray-700 {
-      color: #f8fafc; /* Lighter gray for better contrast on dark images */
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-    }
-    
-    .hero-text-overlay .text-\[#17803d\] {
-      color: #bbf7d0; /* Lighter green for better contrast */
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    }
-    
-    .hero-text-overlay .text-\[#ff8c00\] {
-      color: #fed7aa; /* Lighter orange for better contrast */
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     /* Hero section container - original height */
@@ -244,11 +218,8 @@
         width: 90%;
         max-width: 100%;
         margin: 2rem auto;
-        /* MORE TRANSPARENT: Reduced opacity from 0.6 to 0.2 */
-        background: transparent;
-        backdrop-filter: blur(4px);
+        background: rgba(255, 255, 255, 0.95);
         padding: 2rem;
-        border-radius: 12px;
       }
       
       .hero-section-container {
@@ -256,33 +227,6 @@
         height: auto;
         max-height: none;
         padding: 2rem 0;
-      }
-      
-      /* Reset text colors for mobile transparent background */
-      .hero-text-overlay .text-gray-700 {
-        color: #ffffff; /* White for maximum contrast */
-        text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
-      }
-      
-      .hero-text-overlay .text-\[#17803d\] {
-        color: #bbf7d0; /* Light green */
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-      }
-      
-      .hero-text-overlay .text-\[#ff8c00\] {
-        color: #fed7aa; /* Light orange */
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-      }
-      
-      /* Stronger text shadows for mobile for better readability */
-      .hero-text-overlay h2,
-      .hero-text-overlay h3,
-      .hero-text-overlay h4 {
-        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
-      }
-      
-      .hero-text-overlay p {
-        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
       }
     }
 
@@ -386,10 +330,10 @@
     </div>
   </header>
 
-  <!-- Hero - UPDATED: Full-width image with transparent text overlay -->
+  <!-- Hero - UPDATED: Full-width image with 50% width text overlay -->
   <section class="hero-bg">
     <div class="max-w-7xl mx-auto px-6 hero-section-container flex items-center">
-      <!-- Text content as overlay - transparent background -->
+      <!-- Text content as overlay - 50% width -->
       <div class="hero-text-overlay">
         <p class="text-[#ff8c00] font-medium uppercase tracking-wide">Trusted • Reliable • Professional</p>
         
@@ -948,4 +892,3 @@
 
 </body>
 </html>
-
