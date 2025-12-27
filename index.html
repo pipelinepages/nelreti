@@ -205,26 +205,26 @@
     .hero-text-overlay h2,
     .hero-text-overlay h3,
     .hero-text-overlay h4 {
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
     
     .hero-text-overlay p {
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
     
     .hero-text-overlay .text-gray-700 {
       color: #f8fafc; /* Lighter gray for better contrast on dark images */
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     }
     
     .hero-text-overlay .text-\[#17803d\] {
       color: #bbf7d0; /* Lighter green for better contrast */
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
     
     .hero-text-overlay .text-\[#ff8c00\] {
       color: #fed7aa; /* Lighter orange for better contrast */
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
     
     /* Hero section container - original height */
@@ -244,8 +244,9 @@
         width: 90%;
         max-width: 100%;
         margin: 2rem auto;
-        background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark for mobile readability */
-        backdrop-filter: blur(8px);
+        /* MORE TRANSPARENT: Reduced opacity from 0.6 to 0.2 */
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(4px);
         padding: 2rem;
         border-radius: 12px;
       }
@@ -257,17 +258,31 @@
         padding: 2rem 0;
       }
       
-      /* Reset text colors for mobile dark background */
+      /* Reset text colors for mobile transparent background */
       .hero-text-overlay .text-gray-700 {
-        color: #e2e8f0; /* Light gray for dark background */
+        color: #ffffff; /* White for maximum contrast */
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
       }
       
       .hero-text-overlay .text-\[#17803d\] {
-        color: #86efac; /* Brighter green for dark background */
+        color: #bbf7d0; /* Light green */
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
       }
       
       .hero-text-overlay .text-\[#ff8c00\] {
-        color: #fdba74; /* Brighter orange for dark background */
+        color: #fed7aa; /* Light orange */
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      }
+      
+      /* Stronger text shadows for mobile for better readability */
+      .hero-text-overlay h2,
+      .hero-text-overlay h3,
+      .hero-text-overlay h4 {
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+      }
+      
+      .hero-text-overlay p {
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
       }
     }
 
