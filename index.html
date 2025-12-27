@@ -324,6 +324,17 @@
       border-radius: 0.375rem;
       margin-bottom: 1rem;
     }
+    
+    /* Email success message */
+    .email-success {
+      display: none;
+      background-color: #cce5ff;
+      color: #004085;
+      border: 1px solid #b8daff;
+      padding: 1rem;
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 
@@ -752,17 +763,21 @@
         </p>
       </div>
 
-      <!-- WhatsApp Contact Form -->
+      <!-- WhatsApp and Email Contact Form -->
       <div class="bg-[#f5f7f5] p-6 rounded-lg border border-[#e2e8f0]">
         <div id="form-success" class="form-success">
           <i class="fas fa-check-circle mr-2"></i> Your message has been prepared! A WhatsApp window will open for you to send it.
+        </div>
+        
+        <div id="email-success" class="email-success">
+          <i class="fas fa-envelope mr-2"></i> Your email has been prepared! An email window will open for you to send it.
         </div>
         
         <div id="form-error" class="form-error">
           <i class="fas fa-exclamation-circle mr-2"></i> Please fill in all required fields (Name, Email, and Message).
         </div>
         
-        <form id="whatsapp-form">
+        <form id="contact-form">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <input type="text" id="name" name="name" placeholder="Full Name *" class="p-3 border border-[#e2e8f0] rounded-md w-full" required />
@@ -793,9 +808,16 @@
             </select>
           </div>
           
-          <button type="submit" class="mt-6 px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md hover:brightness-110 w-full flex items-center justify-center">
-            <i class="fab fa-whatsapp mr-2 text-lg"></i> Send via WhatsApp
-          </button>
+          <!-- Two buttons side by side -->
+          <div class="flex flex-col sm:flex-row gap-4 mt-6">
+            <button type="button" id="whatsapp-button" class="px-5 py-3 bg-green-600 text-white font-semibold rounded-md hover:brightness-110 w-full flex items-center justify-center">
+              <i class="fab fa-whatsapp mr-2 text-lg"></i> Send via WhatsApp
+            </button>
+            
+            <button type="button" id="email-button" class="px-5 py-3 bg-[#17803d] text-white font-semibold rounded-md hover:brightness-110 w-full flex items-center justify-center">
+              <i class="fas fa-envelope mr-2 text-lg"></i> Send via Email
+            </button>
+          </div>
         </form>
       </div>
     </div>
@@ -890,26 +912,45 @@
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
 
-    // WhatsApp Form Submission
-    document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
+    // Common validation function
+    function validateForm() {
       // Hide previous messages
       document.getElementById('form-success').style.display = 'none';
+      document.getElementById('email-success').style.display = 'none';
       document.getElementById('form-error').style.display = 'none';
       
       // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      // Validate required fields
+      if (!name || !email || !message) {
+        document.getElementById('form-error').style.display = 'block';
+        return false;
+      }
+      
+      return true;
+    }
+
+    // Get form values function
+    function getFormData() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const subject = document.getElementById('subject').value.trim();
       const message = document.getElementById('message').value.trim();
       const service = document.getElementById('service').value;
       
-      // Validate required fields
-      if (!name || !email || !message) {
-        document.getElementById('form-error').style.display = 'block';
-        return;
-      }
+      return { name, email, subject, message, service };
+    }
+
+    // WhatsApp Form Submission
+    document.getElementById('whatsapp-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (!validateForm()) return;
+      
+      const { name, email, subject, message, service } = getFormData();
       
       // Format the message for WhatsApp
       let whatsappMessage = `*New Contact Form Submission - Nelreti Industrial Services*%0A%0A`;
@@ -939,12 +980,62 @@
       
       // Clear form after a delay
       setTimeout(() => {
-        document.getElementById('whatsapp-form').reset();
+        document.getElementById('contact-form').reset();
       }, 1000);
       
       // Open WhatsApp in a new tab
       setTimeout(() => {
         window.open(whatsappURL, '_blank');
+      }, 1500);
+    });
+
+    // Email Form Submission
+    document.getElementById('email-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (!validateForm()) return;
+      
+      const { name, email, subject, message, service } = getFormData();
+      
+      // Company email address
+      const companyEmail = "info@nelreti.com";
+      
+      // Format the subject for email
+      let emailSubject = "New Contact Form Submission - Nelreti Industrial Services";
+      if (subject) {
+        emailSubject = subject;
+      }
+      
+      // Format the body for email
+      let emailBody = `New Contact Form Submission - Nelreti Industrial Services\n\n`;
+      emailBody += `Name: ${name}\n`;
+      emailBody += `Email: ${email}\n`;
+      
+      if (subject) {
+        emailBody += `Subject: ${subject}\n`;
+      }
+      
+      if (service) {
+        emailBody += `Service Interested In: ${service}\n`;
+      }
+      
+      emailBody += `\nMessage:\n${message}\n\n`;
+      emailBody += `Submitted via nelreti.com website`;
+      
+      // Create mailto URL
+      const mailtoURL = `mailto:${companyEmail}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Show success message
+      document.getElementById('email-success').style.display = 'block';
+      
+      // Clear form after a delay
+      setTimeout(() => {
+        document.getElementById('contact-form').reset();
+      }, 1000);
+      
+      // Open email client in a new tab/window
+      setTimeout(() => {
+        window.open(mailtoURL, '_blank');
       }, 1500);
     });
   </script>
